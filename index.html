@@ -614,11 +614,11 @@
 ══════════════════════════════════════════════════════ -->
 <div id="page-map" class="page">
   <div class="container">
-    <h2 class="section-title">Карта населённых пунктов</h2>
-
+    <h2 class="section-title">Карта расселения в Мамлютском районе</h2>
+<!-- 
     <div class="map-note">
       <strong>Как пользоваться:</strong> Нажмите на метку на карте, чтобы увидеть информацию о жителях этого населённого пункта по национальностям. Чтобы загрузить свою карту — замените файл <code>map.png</code> и обновите координаты меток в коде.
-    </div>
+    </div> -->
 
     <div class="map-wrapper">
       <div class="map-container" id="map-container">
@@ -630,17 +630,8 @@
           Или SVG: <img src="map.svg" alt="Карта региона" id="map-image">
           ══════════════════════════════════════════════
         -->
-        <div class="map-placeholder" id="map-placeholder">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-            <rect x="10" y="15" width="60" height="50" rx="4" fill="none" stroke="#8a7a60" stroke-width="1.5"/>
-            <path d="M10 35 Q25 28 40 35 Q55 42 70 35" stroke="#8a7a60" stroke-width="1" fill="none"/>
-            <circle cx="28" cy="30" r="3" fill="#7a4e28"/>
-            <circle cx="52" cy="42" r="3" fill="#7a4e28"/>
-            <circle cx="38" cy="52" r="3" fill="#7a4e28"/>
-          </svg>
-          <span>Здесь будет ваша карта региона</span>
-          <span style="font-size:0.8rem; opacity:0.7">Замените на &lt;img src="map.png"&gt; или &lt;img src="map.svg"&gt;</span>
-        </div>
+          <img src="map.png" alt="Карта региона" id="map-image">
+
         <!-- Метки поверх карты -->
         <div class="map-overlay" id="map-overlay"></div>
         <!-- Тултип -->
@@ -11331,29 +11322,232 @@ const PEOPLE = [
 */
 const MAP_VILLAGES = [
   {
-    name: "с. Ивановка",
-    left: "30%", top: "28%",
-    data: { "Немцы": 24, "Чеченцы": 0, "Эстонцы": 3, "Поляки": 8 }
+    name: "с. Становое",
+    left: "30%",
+    top: "28%",
+    data: {
+      "Немцы": { people: 54, families: 10 },
+      "Чеченцы": { people: 0, families: 0 },
+      "Эстонцы": { people: 0, families: 0 },
+      "Поляки": { people: 29, families: 12 },
+    },
+  }, 
+   {
+    name: "с. Новое",
+    left: "30%",
+    top: "68%",
+    data: {
+      "Чеченцы": { people: 44, families: 9 },
+    },
+  },
+   {
+    name: "с. Кызыл-Аскер",
+    left: "40%",
+    top: "48%",
+    data: {
+      "Чеченцы": { people: 10, families: 2 },
+      "Эстонцы": { people: 4, families: 2 },
+      "Немцы": { people: 10, families: 3 },
+    },
+  },
+   {
+    name: "с. Смирновка",
+    left: "94%",
+    top: "28%",
+    data: {
+      "Чеченцы": { people: 76, families: 14 },
+      "Поляки": { people: 32, families: 16 },
+    },
+  },
+   {
+    name: "с. Окунёвка",
+    left: "34%",
+    top: "64%",
+    data: {
+      "Чеченцы": { people: 17, families: 3 },
+    },
   },
   {
-    name: "с. Красный Яр",
-    left: "55%", top: "40%",
-    data: { "Немцы": 5, "Чеченцы": 31, "Эстонцы": 0, "Поляки": 2 }
+    name: "с. Красный Октябрь",
+    left: "20%",
+    top: "88%",
+    data: {
+      "Поляки": { people: 11, families: 6 },
+    },
   },
   {
-    name: "с. Октябрьское",
-    left: "72%", top: "22%",
-    data: { "Немцы": 7, "Чеченцы": 0, "Эстонцы": 19, "Поляки": 4 }
+    name: "с. Афонькино",
+    left: "10%",
+    top: "50%",
+    data: {
+      "Поляки": { people: 40, families: 8 },
+    },
   },
   {
-    name: "с. Петровка",
-    left: "42%", top: "62%",
-    data: { "Немцы": 12, "Чеченцы": 8, "Эстонцы": 0, "Поляки": 15 }
+    name: "с. Орел",
+    left: "30%",
+    top: "28%",
+    data: {
+      "Немцы": { people: 18, families: 4 },
+    },
   },
   {
-    name: "с. Заречное",
-    left: "20%", top: "55%",
-    data: { "Немцы": 9, "Чеченцы": 3, "Эстонцы": 2, "Поляки": 0 }
+    name: "с. Дубровное",
+    left: "50%",
+    top: "28%",
+    data: {
+      "Немцы": { people: 37, families: 10 },
+      "Эстонцы": { people: 6, families: 3 },
+      "Поляки": { people: 63, families: 14 },
+    },
+  },
+  {
+    name: "с. Пробуждение",
+    left: "50%",
+    top: "21%",
+    data: {
+      "Немцы": { people: 135, families: 35 },
+    },
+  },
+  {
+    name: "с. Новомихайловка",
+    left: "32%",
+    top: "28%",
+    data: {
+      "Немцы": { people: 479, families: 81 },
+    },
+  }, 
+  {
+    name: "с. Михайловка",
+    left: "39%",
+    top: "8%",
+    data: {
+      "Поляки": { people: 38, families: 11 },
+    },
+  },  
+  {
+    name: "с. Чистое",
+    left: "79%",
+    top: "35%",
+    data: {
+      "Поляки": { people: 20, families: 4 },
+    },
+  },  
+  {
+    name: "г. Мамлютка",
+    left: "32%",
+    top: "37%",
+    data: {
+      "Немцы": { people: 29, families: 8 },
+      "Поляки": { people: 214, families: 187 },
+      "Эстонцы": { people: 7, families: 2 },
+    },
+  },
+  {
+    name: "с. Белое",
+    left: "80%",
+    top: "28%",
+    data: {
+      "Немцы": { people: 17, families: 7 },
+      "Поляки": { people: 90, families: 24 },
+    },
+  }, 
+    {
+    name: "с. Покровка",
+    left: "80%",
+    top: "52%",
+    data: {
+      "Немцы": {families: 4 },
+      "Поляки": { people: 25, families: 8 },
+    },
+  }, 
+    {
+    name: "с. Коваль",
+    left: "40%",
+    top: "68%",
+    data: {
+      "Поляки": { people: 19, families: 7 },
+    },
+  },
+    {
+    name: "с. Калугино",
+    left: "33%",
+    top: "78%",
+    data: {
+      "Поляки": { people: 62, families: 18 },
+    },
+  },
+    {
+    name: "с. Сливное",
+    left: "64%",
+    top: "88%",
+    data: {
+      "Поляки": { people: 73, families: 15 },
+    },
+  },
+    {
+    name: "с. Щучье",
+    left: "74%",
+    top: "38%",
+    data: {
+      "Поляки": { people: 18, families: 6 },
+    },
+  },
+    {
+    name: "с. Искра",
+    left: "72%",
+    top: "94%",
+    data: {
+      "Поляки": { people: 66, families: 15 },
+    },
+  },
+    {
+    name: "с. Воскресенка",
+    left: "50%",
+    top: "70%",
+    data: {
+      "Поляки": { people: 52, families: 22 },
+    },
+  },
+    {
+    name: "с. Калдаман",
+    left: "30%",
+    top: "70%",
+    data: {
+      "Поляки": { people: 28, families: 11 },
+    },
+  },
+    {
+    name: "с. Пчелино",
+    left: "64%",
+    top: "70%",
+    data: {
+      "Поляки": { people: 22, families: 10 },
+    },
+  },
+    {
+    name: "с. Пробуждение",
+    left: "10%",
+    top: "70%",
+    data: {
+      "Поляки": { people: 4, families: 2 },
+    },
+  },
+    {
+    name: "с. Сенжарка",
+    left: "60%",
+    top: "20%",
+    data: {
+      "Поляки": { people: 20, families: 7 },
+    },
+  },
+    {
+    name: "с. Новое",
+    left: "20%",
+    top: "20%",
+    data: {
+      "Поляки": { people: 43, families: 15 },
+    },
   },
 ];
 
@@ -11665,63 +11859,244 @@ function filterPeople() {
 }
 
 // ── MAP ──
+// function initMap() {
+//   const overlay = document.getElementById('map-overlay');
+//   const tooltip = document.getElementById('map-tooltip');
+//   let activeMarker = null;
+
+//   MAP_VILLAGES.forEach((v, i) => {
+//     const marker = document.createElement('div');
+//     marker.className = 'marker';
+//     marker.style.left = v.left;
+//     marker.style.top = v.top;
+//     marker.innerHTML = `<div class="marker-pin"></div><div class="marker-label">${v.name}</div>`;
+
+//     marker.addEventListener('click', (e) => {
+//       e.stopPropagation();
+//       if (activeMarker) activeMarker.classList.remove('active');
+//       if (activeMarker === marker) { activeMarker = null; tooltip.classList.remove('visible'); return; }
+//       activeMarker = marker;
+//       marker.classList.add('active');
+
+//       // Fill tooltip
+//       document.getElementById('tt-title').textContent = v.name;
+//       const rows = Object.entries(v.data)
+//         .filter(([, n]) => n > 0)
+//         .sort((a, b) => b[1] - a[1]);
+//       const total = Object.values(v.data).reduce((s, n) => s + n, 0);
+//       const families = Math.round(total / 3.2);
+
+//       document.getElementById('tt-rows').innerHTML = rows.map(([nat, n]) =>
+//         `<div class="tooltip-row"><span class="nat">${nat}</span><span>${n} чел.</span></div>`
+//       ).join('');
+//       document.getElementById('tt-total').textContent = `Итого: ${total} человек, ≈${families} семей`;
+
+//       // Position tooltip
+//       const container = document.getElementById('map-container');
+//       const rect = container.getBoundingClientRect();
+//       const mRect = marker.getBoundingClientRect();
+//       let left = mRect.left - rect.left + 14;
+//       let top = mRect.top - rect.top - mRect.height;
+//       if (left + 250 > rect.width) left = left - 260;
+//       if (top < 0) top = mRect.bottom - rect.top + 4;
+//       tooltip.style.left = left + 'px';
+//       tooltip.style.top = top + 'px';
+//       tooltip.classList.add('visible');
+
+//       // Map detail
+//       const detail = document.getElementById('map-detail');
+//       const nat_parts = rows.map(([nat, n]) => `${nat}: ${n} чел.`).join(', ');
+//       document.getElementById('map-detail-text').textContent =
+//         `${v.name} — зарегистрировано ${total} человек (≈${families} семей). Состав: ${nat_parts}.`;
+//       detail.style.display = 'block';
+//     });
+
+//     overlay.appendChild(marker);
+//   });
+
+//   document.getElementById('map-container').addEventListener('click', () => {
+//     if (activeMarker) { activeMarker.classList.remove('active'); activeMarker = null; }
+//     tooltip.classList.remove('visible');
+//   });
+// }
+
+
+// ── MAP ──
 function initMap() {
   const overlay = document.getElementById('map-overlay');
   const tooltip = document.getElementById('map-tooltip');
   let activeMarker = null;
 
-  MAP_VILLAGES.forEach((v, i) => {
+  MAP_VILLAGES.forEach((v) => {
     const marker = document.createElement('div');
     marker.className = 'marker';
     marker.style.left = v.left;
     marker.style.top = v.top;
-    marker.innerHTML = `<div class="marker-pin"></div><div class="marker-label">${v.name}</div>`;
+
+    marker.innerHTML = `
+      <div class="marker-pin"></div>
+      <div class="marker-label">${v.name}</div>
+    `;
 
     marker.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (activeMarker) activeMarker.classList.remove('active');
-      if (activeMarker === marker) { activeMarker = null; tooltip.classList.remove('visible'); return; }
+
+      if (activeMarker) {
+        activeMarker.classList.remove('active');
+      }
+
+      if (activeMarker === marker) {
+        activeMarker = null;
+        tooltip.classList.remove('visible');
+        return;
+      }
+
       activeMarker = marker;
       marker.classList.add('active');
 
-      // Fill tooltip
-      document.getElementById('tt-title').textContent = v.name;
+      // ── Данные по национальностям ──
       const rows = Object.entries(v.data)
-        .filter(([, n]) => n > 0)
-        .sort((a, b) => b[1] - a[1]);
-      const total = Object.values(v.data).reduce((s, n) => s + n, 0);
-      const families = Math.round(total / 3.2);
+        .filter(([, data]) => {
+          // Показываем только национальности,
+          // где есть хотя бы какие-то данные
+          return (
+            (data.people !== undefined && data.people > 0) ||
+            (data.families !== undefined && data.families > 0)
+          );
+        })
+        .sort((a, b) => {
+          // Сначала сортируем по количеству людей,
+          // если оно известно
+          const peopleA = a[1].people ?? 0;
+          const peopleB = b[1].people ?? 0;
 
-      document.getElementById('tt-rows').innerHTML = rows.map(([nat, n]) =>
-        `<div class="tooltip-row"><span class="nat">${nat}</span><span>${n} чел.</span></div>`
-      ).join('');
-      document.getElementById('tt-total').textContent = `Итого: ${total} человек, ≈${families} семей`;
+          if (peopleA !== peopleB) {
+            return peopleB - peopleA;
+          }
 
-      // Position tooltip
+          // Если людей нет, сортируем по семьям
+          return (b[1].families ?? 0) - (a[1].families ?? 0);
+        });
+
+      // ── Общее количество людей ──
+      const totalPeople = Object.values(v.data)
+        .reduce((sum, data) => sum + (data.people ?? 0), 0);
+
+      // ── Общее количество семей ──
+      const totalFamilies = Object.values(v.data)
+        .reduce((sum, data) => sum + (data.families ?? 0), 0);
+
+      // ── Формируем строки tooltip ──
+      document.getElementById('tt-title').textContent = v.name;
+
+      document.getElementById('tt-rows').innerHTML = rows.map(([nat, data]) => {
+        const people = data.people;
+        const families = data.families;
+
+        let value = '';
+
+        if (people !== undefined && families !== undefined) {
+          value = `${people} чел. (${families} сем.)`;
+        } else if (people !== undefined) {
+          value = `${people} чел.`;
+        } else if (families !== undefined) {
+          value = `${families} сем.`;
+        }
+
+        return `
+          <div class="tooltip-row">
+            <span class="nat">${nat}</span>
+            <span>${value}</span>
+          </div>
+        `;
+      }).join('');
+
+      // ── Итог ──
+      const totalParts = [];
+
+      if (totalPeople > 0) {
+        totalParts.push(`${totalPeople} человек`);
+      }
+
+      if (totalFamilies > 0) {
+        totalParts.push(`${totalFamilies} семей`);
+      }
+
+      document.getElementById('tt-total').textContent =
+        totalParts.length > 0
+          ? `Итого: ${totalParts.join(', ')}`
+          : 'Данные отсутствуют';
+
+      // ── Position tooltip ──
       const container = document.getElementById('map-container');
       const rect = container.getBoundingClientRect();
       const mRect = marker.getBoundingClientRect();
+
       let left = mRect.left - rect.left + 14;
       let top = mRect.top - rect.top - mRect.height;
-      if (left + 250 > rect.width) left = left - 260;
-      if (top < 0) top = mRect.bottom - rect.top + 4;
+
+      if (left + 250 > rect.width) {
+        left = left - 260;
+      }
+
+      if (top < 0) {
+        top = mRect.bottom - rect.top + 4;
+      }
+
       tooltip.style.left = left + 'px';
       tooltip.style.top = top + 'px';
       tooltip.classList.add('visible');
 
-      // Map detail
+      // ── Детальная информация под картой ──
       const detail = document.getElementById('map-detail');
-      const nat_parts = rows.map(([nat, n]) => `${nat}: ${n} чел.`).join(', ');
+
+      const natParts = rows.map(([nat, data]) => {
+        const people = data.people;
+        const families = data.families;
+
+        if (people !== undefined && families !== undefined) {
+          return `${nat}: ${people} чел. (${families} сем.)`;
+        }
+
+        if (people !== undefined) {
+          return `${nat}: ${people} чел.`;
+        }
+
+        if (families !== undefined) {
+          return `${nat}: ${families} сем.`;
+        }
+
+        return nat;
+      });
+
+      let totalText = '';
+
+      if (totalPeople > 0 && totalFamilies > 0) {
+        totalText = `зарегистрировано ${totalPeople} человек, ${totalFamilies} семей`;
+      } else if (totalPeople > 0) {
+        totalText = `зарегистрировано ${totalPeople} человек`;
+      } else if (totalFamilies > 0) {
+        totalText = `зарегистрировано ${totalFamilies} семей`;
+      } else {
+        totalText = 'данные отсутствуют';
+      }
+
       document.getElementById('map-detail-text').textContent =
-        `${v.name} — зарегистрировано ${total} человек (≈${families} семей). Состав: ${nat_parts}.`;
+        `${v.name} — ${totalText}. Состав: ${natParts.join(', ')}.`;
+
       detail.style.display = 'block';
     });
 
     overlay.appendChild(marker);
   });
 
+  // Закрытие tooltip при клике вне метки
   document.getElementById('map-container').addEventListener('click', () => {
-    if (activeMarker) { activeMarker.classList.remove('active'); activeMarker = null; }
+    if (activeMarker) {
+      activeMarker.classList.remove('active');
+      activeMarker = null;
+    }
+
     tooltip.classList.remove('visible');
   });
 }
