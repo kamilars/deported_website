@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Депортация народов на территорию Мамлютского района — Историческая память</title>
+<title>Депортированные в Казахстан — Историческая память</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #f5f0e8;
-    --bg2: #eddcdc;
-    --bg3: #e3d0d0;
-    --ink: #2c1616;
+    --bg2: #ede8dc;
+    --bg3: #e3dcd0;
+    --ink: #2c2416;
     --ink2: #5a4e3a;
-    --ink3: #8a6060;
+    --ink3: #8a7a60;
     --accent: #7a4e28;
-    --accent2: #c54f4f;
+    --accent2: #c4883a;
     --accent-light: #f0dfc0;
-    --border: #c89898;
+    --border: #c8b898;
     --border2: #b0a080;
     --card: #faf6ee;
     --red: #8b2e2e;
@@ -26,31 +26,12 @@
     --purple: #5a3878;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { background: #0c0a07; }
   body {
     font-family: 'Lora', Georgia, serif;
-    background: transparent;
+    background: var(--bg);
     color: var(--ink);
     min-height: 100vh;
     line-height: 1.7;
-  }
-
-  /* ── FIXED B/W BACKGROUND PHOTO ── */
-  .site-bg {
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    background-image:
-      radial-gradient(ellipse at center, rgba(0,0,0,0.1), rgba(0,0,0,0.5)),
-      linear-gradient(rgba(12,10,7,0.68), rgba(12,10,7,0.8)),
-      url('deport_fon.jpg');
-    background-size: cover, cover, cover;
-    background-position: center, center, center;
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    filter: grayscale(1) contrast(1.08) brightness(0.95);
-  }
-  @media (max-width: 700px) {
-    .site-bg { background-attachment: scroll; }
   }
 
   /* ── HEADER ── */
@@ -107,7 +88,6 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    flex-wrap: wrap;
   }
   nav button {
     background: none;
@@ -132,16 +112,7 @@
   /* ── PAGES ── */
   .page { display: none; }
   .page.active { display: block; }
-  .container {
-    max-width: 900px;
-    margin: 2.25rem auto;
-    padding: 3rem 1.5rem;
-    background: rgba(250,246,238,0.95);
-    -webkit-backdrop-filter: blur(6px) saturate(1.05);
-    backdrop-filter: blur(6px) saturate(1.05);
-    border-radius: 6px;
-    box-shadow: 0 14px 55px rgba(0,0,0,0.45);
-  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
 
   /* ── PAGE 1: ABOUT ── */
   .about-intro {
@@ -165,26 +136,6 @@
     border-bottom: 1px solid var(--border);
   }
   .about-text { color: var(--ink2); font-size: 0.97rem; margin-bottom: 1.5rem; }
-  .about-meta-box {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 2rem;
-    font-size: 0.92rem;
-    color: var(--ink2);
-  }
-  .about-meta-box .row { display: flex; gap: 0.5rem; margin-bottom: 0.35rem; }
-  .about-meta-box .row:last-child { margin-bottom: 0; }
-  .about-meta-box .k { color: var(--ink3); min-width: 130px; flex-shrink: 0; }
-  .about-meta-box .v { color: var(--ink); font-weight: 500; }
-  .goals-list {
-    margin: 0 0 1.5rem;
-    padding-left: 1.25rem;
-    color: var(--ink2);
-    font-size: 0.95rem;
-  }
-  .goals-list li { margin-bottom: 0.5rem; }
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -343,17 +294,24 @@
     flex-direction: column;
     gap: 0.35rem;
   }
+
+  /* строка */
   .meta-row {
     display: flex;
     gap: 0.5rem;
     align-items: baseline;
   }
+
+  /* заголовок (слабый, вторичный) */
   .meta-label {
     font-size: 0.75rem;
     color: var(--ink3);
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    /* min-width: 160px;  */
   }
+
+  /* значение (главное) */
   .meta-value {
     font-size: 0.9rem;
     color: var(--ink3);
@@ -419,6 +377,7 @@
     color: var(--ink2);
     margin-bottom: 1.5rem;
   }
+  /* Map markers overlay */
   .map-overlay {
     position: absolute;
     inset: 0;
@@ -458,6 +417,7 @@
     transition: opacity 0.2s;
   }
   .marker:hover .marker-label { opacity: 1; }
+  /* Tooltip */
   .map-tooltip {
     position: absolute;
     background: var(--card);
@@ -492,6 +452,7 @@
     color: var(--ink3);
     font-style: italic;
   }
+  /* Map legend */
   .map-legend {
     display: flex; gap: 1.5rem; flex-wrap: wrap;
     padding: 1rem 1.5rem;
@@ -512,24 +473,11 @@
   .memory-header {
     padding: 1.25rem 1.5rem;
     display: flex; justify-content: space-between; align-items: flex-start;
-    gap: 1rem;
     cursor: pointer;
     user-select: none;
     transition: background 0.2s;
   }
   .memory-header:hover { background: var(--bg2); }
-  .memory-header-main {
-    display: flex; align-items: flex-start; gap: 0.9rem; flex: 1; min-width: 0;
-  }
-  .memory-thumb {
-    width: 52px; height: 52px;
-    border-radius: 4px;
-    overflow: hidden;
-    flex-shrink: 0;
-    background: #fff;
-    border: 1px solid var(--border);
-  }
-  .memory-thumb img { width: 100%; height: 100%; object-fit: cover; }
   .memory-person .person-full {
     font-family: 'Playfair Display', serif;
     font-size: 1.05rem;
@@ -551,6 +499,7 @@
     flex-shrink: 0;
     font-size: 1rem;
     transition: transform 0.3s, background 0.2s;
+    margin-left: 1rem;
     margin-top: 0.1rem;
   }
   .memory-card.open .memory-toggle {
@@ -564,36 +513,14 @@
     overflow: hidden;
     transition: max-height 0.4s ease;
   }
-  .memory-card.open .memory-body { max-height: 3000px; }
-  .memory-photo {
-    padding: 0.25rem 1.5rem 0;
-    text-align: center;
-    border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
-  }
-  .memory-photo-frame {
-    display: inline-block;
-    background: #fff;
-    padding: 8px;
-    border: 1px solid var(--border);
-    box-shadow: 2px 4px 14px rgba(0,0,0,0.22);
-  }
-  .memory-photo-frame img {
-    display: block;
-    max-width: 100%;
-    max-height: 380px;
-    height: auto;
-    margin: 0 auto;
-  }
+  .memory-card.open .memory-body { max-height: 2000px; }
   .memory-text {
     padding: 0 1.5rem 1.5rem;
     font-size: 0.95rem;
     color: var(--ink2);
     line-height: 1.85;
-    padding-top: 1.25rem;
-  }
-  .memory-card:not(:has(.memory-photo)) .memory-text {
     border-top: 1px solid var(--border);
+    padding-top: 1.25rem;
   }
   .memory-text p + p { margin-top: 1rem; }
   .drop-cap::first-letter {
@@ -605,98 +532,6 @@
     margin: 0.05em 0.1em 0 0;
     color: var(--accent);
   }
-
-  /* ── PAGE 5: GALLERY ── */
-  .gallery-stage {
-    position: relative;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 1rem;
-  }
-  .gallery-image-wrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    background: #14110c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .gallery-image-wrap img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    filter: grayscale(0.1) contrast(1.02);
-  }
-  .gallery-empty {
-    color: rgba(245,240,232,0.55);
-    font-style: italic;
-    font-size: 0.9rem;
-    text-align: center;
-    padding: 2rem;
-  }
-  .gallery-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 42px; height: 42px;
-    border-radius: 50%;
-    background: rgba(44,36,22,0.5);
-    color: #f5f0e8;
-    border: none;
-    font-size: 1.3rem;
-    line-height: 1;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-  }
-  .gallery-nav-btn:hover { background: rgba(122,78,40,0.85); }
-  .gallery-prev { left: 12px; }
-  .gallery-next { right: 12px; }
-  .gallery-caption-bar {
-    padding: 1rem 1.5rem;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .gallery-caption {
-    font-size: 0.92rem;
-    color: var(--ink2);
-    font-style: italic;
-  }
-  .gallery-counter {
-    font-size: 0.78rem;
-    color: var(--ink3);
-    white-space: nowrap;
-    letter-spacing: 0.05em;
-  }
-  .gallery-thumbs {
-    display: flex;
-    gap: 0.5rem;
-    overflow-x: auto;
-    padding-bottom: 0.35rem;
-  }
-  .gallery-thumb {
-    width: 64px; height: 64px;
-    flex-shrink: 0;
-    border-radius: 3px;
-    overflow: hidden;
-    border: 2px solid transparent;
-    cursor: pointer;
-    opacity: 0.55;
-    transition: all 0.2s;
-    background: var(--bg3);
-  }
-  .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.3); }
-  .gallery-thumb:hover { opacity: 0.85; }
-  .gallery-thumb.active { border-color: var(--accent2); opacity: 1; }
 
   /* ── DIVIDER ── */
   .ornamental-divider {
@@ -723,27 +558,21 @@
     .filters { grid-template-columns: 1fr; }
     .person-card { flex-direction: column; }
     header h1 { font-size: 1.4rem; }
-    .container { margin: 1rem 0.5rem; padding: 2rem 1.1rem; }
-    .about-meta-box .row { flex-direction: column; gap: 0.1rem; }
-    .about-meta-box .k { min-width: 0; }
   }
 </style>
 </head>
 <body>
 
-<div class="site-bg"></div>
-
 <header>
-  <div class="header-ornament">Историко-краеведческий проект · Мамлютский район, СКО</div>
-  <h1>Депортация народов<br>на территорию Мамлютского района</h1>
-  <p class="subtitle">КГУ «Мамлютская средняя школа № 2» · научный проект по истории, 2019</p>
+  <div class="header-ornament">Историческое исследование · Казахстан</div>
+  <h1>Депортированные народы<br>в Северном Казахстане</h1>
+  <p class="subtitle">Проект сохранения исторической памяти · Школьное исследование</p>
 </header>
 
 <nav>
   <button class="active" onclick="showPage('search', this)">Депортированные</button>
   <button onclick="showPage('map', this)">Карта расселения</button>
   <button onclick="showPage('memories', this)">Воспоминания</button>
-  <button onclick="showPage('gallery', this)">Галерея</button>
   <button onclick="showPage('about', this)">О проекте</button>
 </nav>
 
@@ -754,7 +583,7 @@
 ══════════════════════════════════════════════════════ -->
 <div id="page-search" class="page active">
   <div class="container">
-    <h2 class="section-title">Поиск по базе данных депортированных Мамлютского района</h2>
+    <h2 class="section-title">Поиск по базе данных</h2>
 
     <div class="search-bar">
       <input type="text" id="search-input" placeholder="Введите имя или фамилию…" oninput="filterPeople()">
@@ -764,6 +593,10 @@
         </select>
         <select id="filter-nat" onchange="filterPeople()">
           <option value="">Все национальности</option>
+          <!-- <option value="Немцы">Немцы</option>
+          <option value="Чеченцы">Чеченцы</option>
+          <option value="Эстонцы">Эстонцы</option>
+          <option value="Поляки">Поляки</option> -->
         </select>
       </div>
     </div>
@@ -781,13 +614,27 @@
 ══════════════════════════════════════════════════════ -->
 <div id="page-map" class="page">
   <div class="container">
-    <h2 class="section-title">Карта расселения депортированных в Мамлютском районе</h2>
+    <h2 class="section-title">Карта расселения в Мамлютском районе</h2>
+<!-- 
+    <div class="map-note">
+      <strong>Как пользоваться:</strong> Нажмите на метку на карте, чтобы увидеть информацию о жителях этого населённого пункта по национальностям. Чтобы загрузить свою карту — замените файл <code>map.png</code> и обновите координаты меток в коде.
+    </div> -->
 
     <div class="map-wrapper">
       <div class="map-container" id="map-container">
-          <img src="map.png" alt="Карта Мамлютского района" id="map-image">
+        <!-- 
+          ══════════════════════════════════════════════
+          ЗАМЕНИТЕ ЭТО: вставьте тег <img> с вашей картой:
+          <img src="map.png" alt="Карта региона" id="map-image">
+          
+          Или SVG: <img src="map.svg" alt="Карта региона" id="map-image">
+          ══════════════════════════════════════════════
+        -->
+          <img src="map.png" alt="Карта региона" id="map-image">
 
+        <!-- Метки поверх карты -->
         <div class="map-overlay" id="map-overlay"></div>
+        <!-- Тултип -->
         <div class="map-tooltip" id="map-tooltip">
           <div class="tooltip-title" id="tt-title"></div>
           <div id="tt-rows"></div>
@@ -823,8 +670,8 @@
 ══════════════════════════════════════════════════════ -->
 <div id="page-memories" class="page">
   <div class="container">
-    <h2 class="section-title">Альбом воспоминаний депортированных Мамлютского района</h2>
-    <p class="about-text" style="margin-bottom:2rem">Воспоминания депортированных и их родственников, ныне проживающих в Мамлютском районе Северо-Казахстанской области, — один из главных источников проекта: они восполняют то, о чём молчат официальные архивные документы.
+    <h2 class="section-title">Воспоминания</h2>
+    <p class="about-text" style="margin-bottom:2rem">Альбом воспоминаний депортированных и их родственников, проживающих в Мамлютском районе. 
       <br>Нажмите на имя, чтобы прочитать историю.</p>
     <div id="memories-list"></div>
   </div>
@@ -833,147 +680,84 @@
 
 
 
-<!-- ══════════════════════════════════════════════════════
-     СТРАНИЦА 4: ГАЛЕРЕЯ АРХИВНЫХ ДОКУМЕНТОВ
-══════════════════════════════════════════════════════ -->
-<div id="page-gallery" class="page">
-  <div class="container">
-    <h2 class="section-title">Галерея архивных документов</h2>
-    <p class="about-text" style="margin-bottom:1.5rem">Списки спецпереселенцев, справки и другие документы районного и областного архивов, собранные в ходе исследования. Листайте стрелками или выберите документ из ряда миниатюр.</p>
-
-    <div class="gallery-stage">
-      <div class="gallery-image-wrap" id="gallery-image-wrap">
-        <div class="gallery-empty">Изображения не загружены</div>
-      </div>
-      <button class="gallery-nav-btn gallery-prev" id="gallery-prev" onclick="galleryPrev()" aria-label="Предыдущее изображение">&#8249;</button>
-      <button class="gallery-nav-btn gallery-next" id="gallery-next" onclick="galleryNext()" aria-label="Следующее изображение">&#8250;</button>
-      <div class="gallery-caption-bar">
-        <div class="gallery-caption" id="gallery-caption"></div>
-        <div class="gallery-counter" id="gallery-counter"></div>
-      </div>
-    </div>
-
-    <div class="gallery-thumbs" id="gallery-thumbs"></div>
-  </div>
-</div>
-
-
-
 
 <!-- ══════════════════════════════════════════════════════
-     СТРАНИЦА 5: О ПРОЕКТЕ
+     СТРАНИЦА 4: О ПРОЕКТЕ
 ══════════════════════════════════════════════════════ -->
 <div id="page-about" class="page">
   <div class="container">
 
     <div class="about-intro">
-      <p>Начало 30-х — середина 50-х годов ХХ века стали одним из самых тяжёлых периодов в истории Казахстана: сотни тысяч людей разных национальностей были насильственно изгнаны с родных мест и депортированы, в том числе — на территорию Мамлютского района Северо-Казахстанской области.</p>
+      <p>В 1930–1940-е годы советское правительство депортировало сотни тысяч людей различных национальностей в Казахстан. Этот проект посвящён сохранению памяти о судьбах людей, оказавшихся в нашем регионе.</p>
     </div>
 
     <h2 class="section-title">О проекте</h2>
-
-    <div class="about-meta-box">
-      <div class="row"><span class="k">Проект</span><span class="v">«Депортация народов на территорию Мамлютского района Северо-Казахстанской области и влияние её на судьбы людей»</span></div>
-      <div class="row"><span class="k">Учреждение</span><span class="v">КГУ «Мамлютская средняя школа № 2», Мамлютский район, СКО</span></div>
-      <div class="row"><span class="k">Автор</span><span class="v">Шакирова Айгерим, учащаяся 10 класса</span></div>
-      <div class="row"><span class="k">Руководитель</span><span class="v">Арсланова Р.А.</span></div>
-      <div class="row"><span class="k">Год</span><span class="v">2019</span></div>
-    </div>
-
     <p class="about-text">
-      Изучение депортации народов на территорию Казахстана до сих пор оставляет немало «белых пятен» в местной истории: специальных исследований о расселении спецпереселенцев именно в населённых пунктах Мамлютского района ранее не проводилось. Настоящий проект — попытка восполнить этот пробел, опираясь на архивные документы районного и областного архивов, а также на живые воспоминания депортированных и их потомков, проживающих в районе сегодня.
+      Данное исследование было проведено учениками [название школы] в рамках школьного проекта по истории. Мы собирали сведения о людях, депортированных в [название района/региона] Казахстана в период с 1937 по 1949 год. В нашей базе данных — архивные документы, семейные воспоминания и исторические свидетельства.
     </p>
     <p class="about-text">
-      <strong>Цель проекта</strong> — создать альбом воспоминаний и карту расселения депортированных на территорию Мамлютского района в 1930–1940-е годы и проследить, как депортация повлияла на судьбы конкретных людей.
+      Главная цель проекта — не дать забыть историю конкретных людей: их имена, судьбы, воспоминания. За каждой записью в нашей базе — реальный человек, чья жизнь была перевёрнута историческими событиями.
     </p>
-
-    <p class="about-text" style="margin-bottom:0.75rem"><strong>Задачи исследования:</strong></p>
-    <ul class="goals-list">
-      <li>изучить литературу по проблеме депортации народов в Казахстан и дать её историографический анализ;</li>
-      <li>провести анкетирование, чтобы выяснить уровень знаний и отношение населения к теме депортации;</li>
-      <li>проработать архивные данные и установить численность депортированных и места их расселения в Мамлютском районе;</li>
-      <li>собрать воспоминания детей и родственников депортированных, проживающих в районе;</li>
-      <li>проследить снятие правовых ограничений со спецпереселенцев и их последующую реабилитацию;</li>
-      <li>создать альбом воспоминаний и карту расселения депортированных с указанием их численности.</li>
-    </ul>
 
     <div class="stats-grid">
       <div class="stat-card">
-        <span class="num" id="stat-people">—</span>
-        <span class="lbl">Человек в базе данных</span>
+        <span class="num">~100</span>
+        <span class="lbl">Человек в базе</span>
       </div>
       <div class="stat-card">
-        <span class="num" id="stat-nats">—</span>
+        <span class="num">4</span>
         <span class="lbl">Национальности</span>
       </div>
       <div class="stat-card">
-        <span class="num" id="stat-villages">—</span>
+        <span class="num">12</span>
         <span class="lbl">Населённых пунктов</span>
       </div>
       <div class="stat-card">
-        <span class="num">1930–1940-е</span>
-        <span class="lbl">Годы депортаций</span>
+        <span class="num">1937–49</span>
+        <span class="lbl">Период депортаций</span>
       </div>
     </div>
 
     <div class="ornamental-divider">✦ ✦ ✦</div>
 
     <h2 class="section-title">Исторический контекст</h2>
-    <p class="about-text">
-      Насильственные переселения гражданского населения в СССР практиковались с 1920-х годов, но подлинно массовый и этнический характер они приобрели с середины 1930-х. Согласно данным НКВД, на 1 января 1945 года на спецпоселении в Казахстане состояло 815 319 человек (232 593 семьи) — немцы, чечено-ингуши, кабардино-балкарцы, карачаевцы, калмыки, крымчане, поляки, бывшие «кулаки» и другие. В Северо-Казахстанской области, куда входит и Мамлютский район, было зарегистрировано около 43 246 спецпереселенцев.
-    </p>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="year">1930–1934</div>
-        <p>Раскулачивание и высылка «кулаков» на освоение северных и казахстанских земель; к 1938 году в Казахстане уже насчитывалось около 100 спецпосёлков.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="year">1936</div>
-        <p>Этническая «зачистка» приграничной полосы: депортация поляков и немцев с приграничных территорий Украины вглубь Казахстана.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="year">1939–1941</div>
-        <p>Депортация поляков из Западной Белоруссии, Западной Украины и республик Прибалтики — свыше 200 тысяч человек, значительная часть которых была направлена в Северный Казахстан.</p>
+        <div class="year">1937–1938</div>
+        <p>Депортация поляков и немцев с западных территорий СССР в Казахстан и Сибирь.</p>
       </div>
       <div class="timeline-item">
         <div class="year">1941</div>
-        <p>Начало Великой Отечественной войны — массовое выселение советских немцев из Поволжья, Грузии, Азербайджана и Армении, а также крымских татар, калмыков, чеченцев, ингушей, балкарцев, карачаевцев.</p>
+        <p>Массовая депортация советских немцев Поволжья после начала войны с Германией.</p>
       </div>
       <div class="timeline-item">
         <div class="year">1944</div>
-        <p>Депортация турок, греков, болгар и армян; продолжение переселения народов Северного Кавказа и Прибалтики.</p>
+        <p>Депортация чеченцев, ингушей и других народов Северного Кавказа в Казахстан и Среднюю Азию.</p>
       </div>
       <div class="timeline-item">
         <div class="year">1945–1949</div>
-        <p>Дополнительные волны депортаций, в том числе жителей Прибалтики (включая эстонцев) и других контингентов, вплоть до конца 1940-х годов.</p>
+        <p>Дополнительные волны депортаций народов Прибалтики, в том числе эстонцев.</p>
       </div>
       <div class="timeline-item">
-        <div class="year">1954–1956</div>
-        <p>Первые шаги к снятию правовых ограничений со спецпереселенцев: постановление 1954 года и указ 1956 года о снятии с учёта спецпоселения ряда народов.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="year">1997</div>
-        <p>Закон Республики Казахстан «О реабилитации жертв массовых репрессий», давший депортированным право на возмещения и льготы.</p>
+        <div class="year">1956–1964</div>
+        <p>Частичная реабилитация. Возможность вернуться на родину открылась не для всех.</p>
       </div>
     </div>
-
-    <div class="ornamental-divider">✦ ✦ ✦</div>
-
-    <h2 class="section-title">Источники и методы</h2>
-    <p class="about-text">
-      В основу проекта легли три группы источников: нормативно-правовые документы центральных органов власти; делопроизводственная документация местных партийных и советских органов — справки, отчёты, статистика, переписка и заявления спецпереселенцев из районного и областного архивов; и воспоминания самих депортированных и их родственников, проживающих сегодня в Мамлютском районе. Использовались принципы историзма и научной объективности, а также статистический, описательный методы и анкетирование.
-    </p>
 
     <div class="ornamental-divider">✦ ✦ ✦</div>
 
     <h2 class="section-title">Авторы проекта</h2>
     <div class="authors-grid">
       <div class="author-card">
-        <div class="name">Шакирова Айгерим</div>
-        <div class="role">Автор, учащаяся 10 класса</div>
+        <div class="name">Имя Фамилия</div>
+        <div class="role">Автор, исследователь</div>
       </div>
       <div class="author-card">
-        <div class="name">Арсланова Р.А.</div>
+        <div class="name">Имя Фамилия</div>
+        <div class="role">Автор, исследователь</div>
+      </div>
+      <div class="author-card">
+        <div class="name">Имя Фамилия</div>
         <div class="role">Научный руководитель</div>
       </div>
     </div>
@@ -984,13 +768,12 @@
 
 
 <footer>
-  КГУ «Мамлютская средняя школа № 2» &nbsp;·&nbsp; Мамлютский район, Северо-Казахстанская область &nbsp;·&nbsp; научный проект, 2019
+  Школьный исследовательский проект по истории &nbsp;·&nbsp; [Название школы, год]
 </footer>
 
 <script src="people.js"></script>
 <script src="map_villages.js"></script>
 <script src="memories.js"></script>
-<script src="gallery.js"></script>
 <script>
 
 
@@ -1124,12 +907,16 @@ function initMap() {
       // ── Данные по национальностям ──
       const rows = Object.entries(v.data)
         .filter(([, data]) => {
+          // Показываем только национальности,
+          // где есть хотя бы какие-то данные
           return (
             (data.people !== undefined && data.people > 0) ||
             (data.families !== undefined && data.families > 0)
           );
         })
         .sort((a, b) => {
+          // Сначала сортируем по количеству людей,
+          // если оно известно
           const peopleA = a[1].people ?? 0;
           const peopleB = b[1].people ?? 0;
 
@@ -1137,15 +924,19 @@ function initMap() {
             return peopleB - peopleA;
           }
 
+          // Если людей нет, сортируем по семьям
           return (b[1].families ?? 0) - (a[1].families ?? 0);
         });
 
+      // ── Общее количество людей ──
       const totalPeople = Object.values(v.data)
         .reduce((sum, data) => sum + (data.people ?? 0), 0);
 
+      // ── Общее количество семей ──
       const totalFamilies = Object.values(v.data)
         .reduce((sum, data) => sum + (data.families ?? 0), 0);
 
+      // ── Формируем строки tooltip ──
       document.getElementById('tt-title').textContent = v.name;
 
       document.getElementById('tt-rows').innerHTML = rows.map(([nat, data]) => {
@@ -1170,6 +961,7 @@ function initMap() {
         `;
       }).join('');
 
+      // ── Итог ──
       const totalParts = [];
 
       if (totalPeople > 0) {
@@ -1185,6 +977,7 @@ function initMap() {
           ? `Итого: ${totalParts.join(', ')}`
           : 'Данные отсутствуют';
 
+      // ── Position tooltip ──
       const container = document.getElementById('map-container');
       const rect = container.getBoundingClientRect();
       const mRect = marker.getBoundingClientRect();
@@ -1204,6 +997,7 @@ function initMap() {
       tooltip.style.top = top + 'px';
       tooltip.classList.add('visible');
 
+      // ── Детальная информация под картой ──
       const detail = document.getElementById('map-detail');
 
       const natParts = rows.map(([nat, data]) => {
@@ -1246,6 +1040,7 @@ function initMap() {
     overlay.appendChild(marker);
   });
 
+  // Закрытие tooltip при клике вне метки
   document.getElementById('map-container').addEventListener('click', () => {
     if (activeMarker) {
       activeMarker.classList.remove('active');
@@ -1262,20 +1057,16 @@ function initMemories() {
   list.innerHTML = MEMORIES.map((m, i) => `
     <div class="memory-card" id="mem-${i}">
       <div class="memory-header" onclick="toggleMemory(${i})">
-        <div class="memory-header-main">
-          ${m.image ? `<div class="memory-thumb"><img src="${m.image}" alt=""></div>` : ''}
-          <div class="memory-person">
-            <div class="person-full">${m.lastName} ${m.firstName} ${m.patroName}</div>
-            <div class="person-details">
-              ${m.gender === 'female' ? 'Родилась' : 'Родился'} ${m.born}
-              ${m.birthplace ? '· ' + m.birthplace : ''}
-            </div>
+        <div class="memory-person">
+          <div class="person-full">${m.lastName} ${m.firstName} ${m.patroName}</div>
+          <div class="person-details">
+            ${m.gender === 'female' ? 'Родилась' : 'Родился'} ${m.born}
+            ${m.birthplace ? '· ' + m.birthplace : ''}
           </div>
         </div>
         <div class="memory-toggle">▾</div>
       </div>
       <div class="memory-body">
-        ${m.image ? `<div class="memory-photo"><div class="memory-photo-frame"><img src="${m.image}" alt="Фотография к воспоминанию"></div></div>` : ''}
         <div class="memory-text">
           ${m.text.split('\n\n').map((para, pi) =>
             `<p class="${pi === 0 ? 'drop-cap' : ''}">${para.trim()}</p>`
@@ -1290,84 +1081,10 @@ function toggleMemory(i) {
   document.getElementById('mem-' + i).classList.toggle('open');
 }
 
-// ── GALLERY ──
-let galleryIndex = 0;
-
-function initGallery() {
-  const wrap = document.getElementById('gallery-image-wrap');
-  const thumbs = document.getElementById('gallery-thumbs');
-
-  if (typeof GALLERY_IMAGES === 'undefined' || GALLERY_IMAGES.length === 0) {
-    wrap.innerHTML = '<div class="gallery-empty">Изображения не загружены.<br>Добавьте файлы в gallery.js</div>';
-    document.getElementById('gallery-caption').textContent = '';
-    document.getElementById('gallery-counter').textContent = '';
-    document.getElementById('gallery-prev').style.display = 'none';
-    document.getElementById('gallery-next').style.display = 'none';
-    return;
-  }
-
-  thumbs.innerHTML = GALLERY_IMAGES.map((g, i) => `
-    <div class="gallery-thumb" id="gthumb-${i}" onclick="galleryGoTo(${i})">
-      <img src="${g.src}" alt="">
-    </div>
-  `).join('');
-
-  galleryGoTo(0);
-}
-
-function galleryGoTo(i) {
-  if (typeof GALLERY_IMAGES === 'undefined' || GALLERY_IMAGES.length === 0) return;
-  const n = GALLERY_IMAGES.length;
-  galleryIndex = (i + n) % n;
-  const item = GALLERY_IMAGES[galleryIndex];
-
-  document.getElementById('gallery-image-wrap').innerHTML =
-    `<img src="${item.src}" alt="${(item.caption || '').replace(/"/g, '&quot;')}">`;
-  document.getElementById('gallery-caption').textContent = item.caption || '';
-  document.getElementById('gallery-counter').textContent = `${galleryIndex + 1} / ${n}`;
-
-  document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
-  const activeThumb = document.getElementById('gthumb-' + galleryIndex);
-  if (activeThumb) {
-    activeThumb.classList.add('active');
-    activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-  }
-}
-
-function galleryNext() { galleryGoTo(galleryIndex + 1); }
-function galleryPrev() { galleryGoTo(galleryIndex - 1); }
-
-document.addEventListener('keydown', (e) => {
-  const galleryPage = document.getElementById('page-gallery');
-  if (!galleryPage.classList.contains('active')) return;
-  if (e.key === 'ArrowRight') galleryNext();
-  if (e.key === 'ArrowLeft') galleryPrev();
-});
-
-// ── ABOUT STATS ──
-function initAboutStats() {
-  const peopleEl = document.getElementById('stat-people');
-  const natsEl = document.getElementById('stat-nats');
-  const villagesEl = document.getElementById('stat-villages');
-
-  if (typeof PEOPLE !== 'undefined') {
-    peopleEl.textContent = PEOPLE.length;
-    natsEl.textContent = new Set(PEOPLE.map(p => p.nat)).size;
-  }
-
-  if (typeof MAP_VILLAGES !== 'undefined') {
-    villagesEl.textContent = MAP_VILLAGES.length;
-  } else if (typeof PEOPLE !== 'undefined') {
-    villagesEl.textContent = new Set(PEOPLE.map(p => p.village)).size;
-  }
-}
-
 // ── INIT ──
 initSearch();
 initMap();
 initMemories();
-initGallery();
-initAboutStats();
 </script>
 </body>
 </html>

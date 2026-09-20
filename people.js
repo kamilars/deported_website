@@ -10438,5 +10438,85 @@ const PEOPLE = [
     "gender": "male",
     "listDate": "",
     "archiveCode": ""
+  },
+    {
+    "id": 1045,
+    "fullName": "Домбровский Владимир Петрович",
+    "birthDate": "25.08.1948 г.",
+    "village": "Белое",
+    "nat": "Поляки",
+    "gender": "male",
+    "listDate": "",
+    "archiveCode": "По воспоминаниям"
+  },
+    {
+    "id": 1046,
+    "fullName": "Сизых Эля Христьяновна",
+    "birthDate": "22.04.1938 г.",
+    "village": "Афонькино",
+    "nat": "Немцы",
+    "gender": "female",
+    "listDate": "",
+    "archiveCode": "По воспоминаниям"
+  },
+    {
+    "id": 1047,
+    "fullName": "Берг Владимир Петрович",
+    "birthDate": "15.11.1941 г.",
+    "village": "Орел",
+    "nat": "Немцы",
+    "gender": "male",
+    "listDate": "",
+    "archiveCode": "По воспоминаниям"
+  },
+    {
+    "id": 1048,
+    "fullName": "Гамбург Ольга Александровна",
+    "birthDate": "15.12.1955 г.",
+    "village": "Мамлютка",
+    "nat": "Немцы",
+    "gender": "female",
+    "listDate": "",
+    "archiveCode": "По воспоминаниям"
+  },
+    {
+    "id": 1049,
+    "fullName": "Швейцер Георгий Титусович",
+    "birthDate": "23.04.1938 г.",
+    "village": "Мамлютка",
+    "nat": "Немцы",
+    "gender": "male",
+    "listDate": "",
+    "archiveCode": "По воспоминаниям"
+  },
+    {
+    "id": 1050,
+    "fullName": "Эйсфельд Ольга Яковлевна (Тисин)",
+    "birthDate": "12.02.1936 г.",
+    "village": "Пресновка",
+    "nat": "Немцы",
+    "gender": "female",
+    "listDate": "",
+    "archiveCode": "По воспоминаниям"
+  },
+    {
+    "id": 1051,
+    "fullName": "Шитцель Роза Григорьевна",
+    "birthDate": "23.12.1932 г.",
+    "village": "Покровка",
+    "nat": "Немцы",
+    "gender": "female",
+    "listDate": "",
+    "archiveCode": "По воспоминаниям"
+  },
+    {
+    "id": 1052,
+    "fullName": "Гавришевский Петр Тадеушевич",
+    "birthDate": "6.10.1938 г.",
+    "village": "Мамлютка",
+    "nat": "Поляки",
+    "gender": "male",
+    "listDate": "",
+    "archiveCode": "По воспоминаниям"
   }
 ];
